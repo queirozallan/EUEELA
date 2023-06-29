@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sim ou Não</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .opcao {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #eaeaea;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .opcao:hover {
+            transform: scale(1.1);
+        }
+
+        #nao {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function fugirAleatoriamente() {
+            var nao = document.getElementById('nao');
+            var bodyWidth = document.body.clientWidth;
+            var bodyHeight = document.body.clientHeight;
+
+            var novoTopo = Math.random() * (bodyHeight - nao.offsetHeight);
+            var novoEsquerda = Math.random() * (bodyWidth - nao.offsetWidth);
+
+            nao.style.top = novoTopo + 'px';
+            nao.style.left = novoEsquerda + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Quer ser o amor da minha vida para todo o sempre e realizar todos nossos sonhos juntos?</h2>
+        <br>
+        <span class="opcao" id="sim" onclick="alert('EU te amo infinitamente minha vida')">Sim</span>
+        <span class="opcao" id="nao" onmouseover="fugirAleatoriamente()">Não</span>
+    </div>
+</body>
+</html>
